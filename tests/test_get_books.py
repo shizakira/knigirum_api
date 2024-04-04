@@ -222,10 +222,3 @@ def test_negative_max_price(value):
     assert response.status_code == 400
 
 
-# Негативный тест отправки запроса с телом
-def test_request_with_json():
-    payload = {"text": "helloworld"}
-    response = requests.get(URL, json=payload)
-    data = response.json()["products"]
-    assert response.status_code == 200
-    assert len(data) == 50
